@@ -1,0 +1,9 @@
+DEP_REPO=sale-workflow
+DEP_MODULE=sale_procurement_group_by_line
+PR_NUM=1689
+echo odoo14-addon-${DEP_MODULE} @git+https://github.com/OCA/${DEP_REPO}@refs/pull/${PR_NUM}/head#subdirectory=setup/${DEP_MODULE} >> ../test-requirements.txt
+DEP_MANIFEST=../${DEP_MODULE}/__manifest__.py
+if [[ -f ${DEP_MANIFEST} ]]; then
+    echo Please edit ${DEP_MANIFEST} to set installable to False.
+    grep installable ${DEP_MANIFEST}
+fi
