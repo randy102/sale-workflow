@@ -8,7 +8,7 @@ class ProcurementGroup(models.Model):
     _inherit = "procurement.group"
 
     @api.model
-    def run(self, procurements):
+    def run(self, procurements, raise_user_error=True):
         new_procs = []
         Proc = self.env["procurement.group"].Procurement
         for procurement in procurements:
