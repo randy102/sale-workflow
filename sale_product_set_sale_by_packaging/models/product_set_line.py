@@ -16,17 +16,17 @@ class ProductSetLine(models.Model):
     # Just for UI purpose
     sell_only_by_packaging = fields.Boolean(related="product_id.sell_only_by_packaging")
 
-    # The warning is because field "sell_only_by_packaging" is related,
-    # non-store, non-inherit so not writeable
-    @api.constrains("sell_only_by_packaging", "product_packaging_id")
-    def _check_sell_only_by_packaging(self):
-        errored = self.filtered(
-            lambda x: x.product_id.sell_only_by_packaging and not x.product_packaging_id
-        )
-        if errored:
-            raise exceptions.UserError(
-                self._check_sell_only_by_packaging_err_msg(errored)
-            )
+    # # The warning is because field "sell_only_by_packaging" is related,
+    # # non-store, non-inherit so not writeable
+    # @api.constrains("sell_only_by_packaging", "product_packaging_id")
+    # def _check_sell_only_by_packaging(self):
+    #     errored = self.filtered(
+    #         lambda x: x.product_id.sell_only_by_packaging and not x.product_packaging_id
+    #     )
+    #     if errored:
+    #         raise exceptions.UserError(
+    #             self._check_sell_only_by_packaging_err_msg(errored)
+    #         )
 
     def _check_sell_only_by_packaging_err_msg(self, lines):
         return _(
