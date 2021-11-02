@@ -1,0 +1,2 @@
+odoo14-addon-sale-order-secondary-unit @git+https://github.com/randy102/sale-workflow@temp-sale-order-secondary-unit#subdirectory=setup/sale_order_secondary_unit
+odoo14-addon-stock-secondary-unit @git+https://github.com/OCA/stock-logistics-warehouse@refs/pull/1272/head#subdirectory=setup/stock_secondary_unit 
